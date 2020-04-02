@@ -106,7 +106,7 @@ def predictXception():
     if request.method == 'POST':
         file_path = get_file_path_and_save(request)
 
-        img = image.load_img(file_path, target_size=(224, 224))
+        img = image.load_img(file_path, target_size=(299, 299))
         img_data = image.img_to_array(img)
         img_data = np.expand_dims(img_data, axis=0)
         img_data = preprocess_input_xception(img_data)
